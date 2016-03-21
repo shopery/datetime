@@ -8,8 +8,16 @@
             "email": "berny.cantos@shopery.com"
         }
     ],
+    "require": {
+        "php": ">=5.5"
+    },
     "require-dev": {
         "phpunit/phpunit": "^5.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Shopery\\DateTime\\": "src"
+        }
     },
     "extra": {
         "branch-alias": {
