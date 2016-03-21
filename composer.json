@@ -1,0 +1,19 @@
+{
+    "name": "shopery/datetime",
+    "description": "Datetime helper for easier testing",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Berny Cantos",
+            "email": "berny.cantos@shopery.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^5.2"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
