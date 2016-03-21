@@ -61,3 +61,51 @@ class CouponTest
     }
 }
 ```
+
+## PHPUnit Listener
+
+You can setup PHPUnit to freeze time while entering some of your tests.
+A PHPUnit listener is provided which adds a `freezeTime` annotation for your tests.
+Here are the changes you need to do to your `phpunit.xml`:
+
+```xml
+<phpunit>
+    ...
+    <listeners>
+        <listener class="Shopery\DateTime\Listener\PHPUnit\DateTimeListener" />
+    </listeners>
+    ...
+</phpunit>
+```
+
+And now, you can add `@freezeTime` in the PHPDoc of each test.
+
+```php
+class MyTest
+{
+    /**
+     * @freezeTime
+     */
+    public function test_frozen_in_current_time()
+    {
+    }
+
+    /**
+     * @freezeTime 2015-01-31 08:30:00
+     */
+    public function test_frozen_in_a_given_date()
+    {
+    }
+
+    /**
+     * @freezeTime first monday of January last year
+     */
+    public function test_frozen_in_a_relative_date()
+    {
+    }
+
+    public function test_this_is_not_frozen()
+    {
+    }
+}
+```
