@@ -18,4 +18,8 @@
             <directory>tests</directory>
         </testsuite>
     </testsuites>
+
+    <listeners>
+        <listener class="Shopery\DateTime\Listener\PHPUnit\DateTimeListener" />
+    </listeners>
 </phpunit>
