@@ -45,10 +45,11 @@ final class DateTime
      *
      * @param string $time
      *
-     * @return DateTime
+     * @return DateTimeInterface
      */
     public static function create($time)
     {
+        /** @var NativeDateTime $frozenTime */
         $frozenTime = self::frozenTime();
         if ($frozenTime) {
             return $frozenTime->modify($time);
@@ -98,7 +99,7 @@ final class DateTime
      */
     private static function frozenTime()
     {
-        if (self::$frozenTime instanceof \DateTime) {
+        if (self::$frozenTime instanceof NativeDateTime) {
             return clone self::$frozenTime;
         }
 
